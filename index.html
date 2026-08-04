@@ -95,7 +95,10 @@
   .feature p{font-size:17.5px;color:var(--sub);line-height:1.8}
 
   /* 画面ギャラリー（横スクロール） */
+  /* 画面が広いときは中央にそろえる。狭いときは横スクロールになる。
+     safe を付けないと、はみ出したときに左端の1枚がスクロールで出せなくなる。 */
   .shots{display:flex;gap:20px;overflow-x:auto;padding:6px 22px 22px;
+         justify-content:safe center;
          scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
   .shots::-webkit-scrollbar{height:8px}
   .shots::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
