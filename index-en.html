@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyCIRQL — Map the people who matter.</title>
+<meta name="description" content="Family, relatives, friends and places — organised as a relationship map and a family tree. For iPhone, iPad and Mac. Your data stays on your device and in your own iCloud.">
+<meta name="theme-color" content="#f7f3ec">
+<link rel="icon" href="img/icon.png">
+<link rel="alternate" hreflang="ja" href="https://mycirqlapp.github.io/">
+<link rel="alternate" hreflang="en" href="https://mycirqlapp.github.io/index-en.html">
+<meta property="og:title" content="MyCIRQL">
+<meta property="og:description" content="Map the people who matter — a relationship map and family tree for iPhone, iPad and Mac.">
+<meta property="og:image" content="https://mycirqlapp.github.io/img/icon.png">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#f7f3ec; --card:#fffdf9; --ink:#2b2b2b; --sub:#6b6b6b;
+    --line:#e4ddcf; --akane:#c0414a; --midori:#3c9460; --gold:#b9933f;
+    --deep:#2b2622; --shadow:0 12px 34px rgba(60,45,30,.10);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1c1a17; --card:#26231f; --ink:#f2ede3; --sub:#a89f92;
+      --line:#3a352e; --akane:#e0737b; --midori:#6fbe8c; --gold:#d4ae5e;
+      --deep:#12100e; --shadow:0 12px 34px rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#1c1a17; --card:#26231f; --ink:#f2ede3; --sub:#a89f92;
+    --line:#3a352e; --akane:#e0737b; --midori:#6fbe8c; --gold:#d4ae5e;
+    --deep:#12100e; --shadow:0 12px 34px rgba(0,0,0,.45);
+  }
+  :root[data-theme="light"]{
+    --bg:#f7f3ec; --card:#fffdf9; --ink:#2b2b2b; --sub:#6b6b6b;
+    --line:#e4ddcf; --akane:#c0414a; --midori:#3c9460; --gold:#b9933f;
+    --deep:#2b2622; --shadow:0 12px 34px rgba(60,45,30,.10);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.75; font-size:19px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  .narrow{max-width:720px;margin:0 auto}
+
+  nav{padding:14px 0;border-bottom:1px solid var(--line);
+      background:color-mix(in srgb, var(--bg) 88%, transparent);
+      position:sticky;top:0;backdrop-filter:blur(10px);z-index:20}
+  nav .wrap{display:flex;align-items:center;gap:18px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+  .brand img{width:38px;height:38px;border-radius:10px}
+  .brand b{font-size:19px;letter-spacing:.04em;display:block;line-height:1.3}
+  .brand small{font-size:12px;color:var(--sub);letter-spacing:.14em;display:block;line-height:1.2}
+  nav .spacer{flex:1}
+  nav .navlinks{display:flex;gap:20px}
+  nav .navlinks a{color:var(--sub);text-decoration:none;font-size:16px;white-space:nowrap}
+  nav .navlinks a:hover{color:var(--ink)}
+  .lang{font-size:15px;color:var(--sub);text-decoration:none;white-space:nowrap;
+        border:1px solid var(--line);padding:6px 12px;border-radius:999px;background:var(--card)}
+  .lang:hover{color:var(--ink)}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--akane);color:#fff;
+       text-decoration:none;padding:13px 26px;border-radius:999px;font-size:17px;font-weight:600;
+       box-shadow:0 6px 18px rgba(192,65,74,.28);white-space:nowrap;
+       transition:transform .15s ease, box-shadow .15s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(192,65,74,.34)}
+
+  .hero{padding:60px 0 20px}
+  .hero .inner{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  .hero h1{font-size:44px;line-height:1.2;letter-spacing:-.01em;margin-bottom:20px;text-wrap:balance}
+  .hero .lead{font-size:20px;color:var(--sub);margin-bottom:14px}
+  .hero .note{font-size:16px;color:var(--sub);margin-bottom:28px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero .price{font-size:15px;color:var(--sub)}
+  .phone{border:9px solid var(--deep);border-radius:36px;overflow:hidden;box-shadow:var(--shadow);
+         background:var(--deep);max-width:262px;margin:0 auto}
+  .phone img{border-radius:27px}
+
+  section{padding:56px 0}
+  .eyebrow{text-align:center;font-size:14px;letter-spacing:.22em;color:var(--gold);margin-bottom:10px}
+  h2{font-size:32px;text-align:center;margin-bottom:10px;letter-spacing:-.01em;text-wrap:balance}
+  .sub{text-align:center;color:var(--sub);font-size:18px;margin-bottom:38px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .feature .ico{font-size:30px;margin-bottom:10px}
+  .feature h3{font-size:19px;margin-bottom:7px}
+  .feature p{font-size:16.5px;color:var(--sub);line-height:1.7}
+
+  .shots{display:flex;gap:20px;overflow-x:auto;padding:6px 22px 22px;
+         scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .shots::-webkit-scrollbar{height:8px}
+  .shots::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+  .shot{flex:0 0 214px;scroll-snap-align:center}
+  .shot .phone{max-width:214px;border-width:8px;border-radius:30px}
+  .shot p{text-align:center;font-size:15px;color:var(--sub);margin-top:12px;line-height:1.5}
+
+  .mac{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .macshot{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .pill{display:inline-block;background:color-mix(in srgb, var(--midori) 15%, transparent);
+        color:var(--midori);border:1px solid color-mix(in srgb, var(--midori) 45%, transparent);
+        padding:5px 15px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.06em}
+
+  .promise{background:var(--deep);color:#f2ede3;border-radius:22px;padding:46px 30px;text-align:center}
+  .promise h2{color:#fff}
+  .promise p{max-width:640px;margin:16px auto 0;color:#cfc7ba;font-size:18px}
+  .promise .small{font-size:15px;color:#9d9487;margin-top:20px}
+
+  .who ul{max-width:620px;margin:0 auto;list-style:none}
+  .who li{background:var(--card);border:1px solid var(--line);border-radius:14px;
+          padding:16px 20px;margin-bottom:12px;font-size:18px;display:flex;gap:13px;align-items:flex-start}
+  .who li .b{color:var(--akane);font-weight:700;flex:0 0 auto}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;
+          padding:16px 20px;margin-bottom:12px}
+  summary{font-size:18px;font-weight:600;cursor:pointer;list-style:none;
+          display:flex;justify-content:space-between;gap:14px;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--akane);font-weight:400;flex:0 0 auto}
+  details[open] summary::after{content:"−"}
+  details p{font-size:16.5px;color:var(--sub);margin-top:12px}
+
+  .final{text-align:center}
+  .final h2{margin-bottom:22px}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;text-align:center;color:var(--sub);font-size:15px}
+  footer a{color:var(--akane);text-decoration:none}
+  footer .links{margin-bottom:14px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+  footer .links a{font-size:17px}
+  footer .langs{font-size:14px;margin-bottom:20px}
+  footer .langs a{color:var(--sub);margin:0 7px}
+
+  @media(max-width:860px){
+    .grid{grid-template-columns:1fr 1fr}
+    .hero .inner{grid-template-columns:1fr;gap:32px}
+    .hero h1{font-size:33px}
+    .hero .cta{justify-content:center}
+    .hero .text{text-align:center}
+    nav .navlinks{display:none}
+  }
+  @media(max-width:560px){
+    .grid{grid-template-columns:1fr}
+    body{font-size:18px}
+    .hero h1{font-size:28px}
+    h2{font-size:26px}
+    nav{padding:10px 0}
+    nav .wrap{padding:0 16px;gap:10px}
+    .brand img{width:32px;height:32px}
+    .brand b{font-size:16px}
+    .brand small{font-size:11px}
+    nav .btn{padding:10px 16px;font-size:14px}
+    .lang{padding:5px 10px;font-size:14px}
+    .shots{padding-left:16px;padding-right:16px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="img/icon.png" alt="">
+      <span><b>MyCIRQL</b><small>PEOPLE &amp; FAMILY TREE</small></span>
+    </a>
+    <span class="spacer"></span>
+    <div class="navlinks">
+      <a href="#features">Features</a>
+      <a href="#screens">Screens</a>
+      <a href="#mac">Mac</a>
+      <a href="#privacy">Privacy</a>
+    </div>
+    <a class="lang" href="./">日本語</a>
+    <a class="btn" href="https://apps.apple.com/app/id6777648250">App Store</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap inner">
+    <div class="text">
+      <h1>The people in your head,<br>drawn as a map.</h1>
+      <p class="lead">Family, relatives, friends and places — laid out as a relationship map and a family tree. Who is whose what becomes obvious at a glance.</p>
+      <p class="note">Not a social network. There is no one to connect with, and nothing is sent anywhere.</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/app/id6777648250">Download on the App Store</a>
+        <span class="price">Free to start</span>
+      </div>
+    </div>
+    <div class="phone">
+      <img src="img/en_ip_1_hub.jpg" alt="The relationship map, with family, relatives and friends radiating from one person" width="540" height="1173">
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <p class="eyebrow">FEATURES</p>
+    <h2>What it does</h2>
+    <p class="sub">Every tap grows the circle a little further.</p>
+    <div class="grid">
+      <div class="feature">
+        <div class="ico">🕸️</div>
+        <h3>See the connections</h3>
+        <p>Pick who is whose what, and the relationships fan out around that person — the way a cast chart does.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🌳</div>
+        <h3>A family tree that builds itself</h3>
+        <p>Add parents, children and spouses, and the tree assembles on its own. Siblings fall into birth order automatically.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">📷</div>
+        <h3>Albums that remember</h3>
+        <p>Keep photos with the date they were taken. Each one shows how old the person was, and the whole album exports as a PDF.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🔔</div>
+        <h3>Never miss the day</h3>
+        <p>Birthdays, anniversaries and memorial days are announced before they arrive, so they don't slip past.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">📄</div>
+        <h3>Guest lists made easy</h3>
+        <p>Select the people you need and export them to CSV or PDF — useful for weddings and gatherings. Maps and trees export too.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">📇</div>
+        <h3>Quick to fill in</h3>
+        <p>Type it in, scan a business card with the camera, or bring people over from the contacts already on your phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <p class="eyebrow">SCREENS</p>
+  <h2>Take a look</h2>
+  <p class="sub">Scroll sideways.</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone"><img src="img/en_ip_1_hub.jpg" alt="Hub screen" width="540" height="1173" loading="lazy"></div>
+      <p>Hub<br>relationships fan out from one person</p>
+    </div>
+    <div class="shot">
+      <div class="phone"><img src="img/en_ip_2_tree.jpg" alt="Family tree screen" width="540" height="1173" loading="lazy"></div>
+      <p>Family tree<br>generations laid out in order</p>
+    </div>
+    <div class="shot">
+      <div class="phone"><img src="img/en_ip_3_list.jpg" alt="List screen" width="540" height="1173" loading="lazy"></div>
+      <p>List<br>filter by category or closeness</p>
+    </div>
+  </div>
+</section>
+
+<section class="mac" id="mac">
+  <div class="wrap">
+    <p class="eyebrow">FOR MAC</p>
+    <h2>The same circle, on your Mac.</h2>
+    <p class="sub"><span class="pill">AVAILABLE NOW</span></p>
+    <p class="narrow" style="text-align:center;color:var(--sub);font-size:18px;margin-bottom:20px">
+      The wider screen puts the list, the map and the profile side by side.
+      It is faster to type on, and easier when you are organising a lot of people at once.
+      Everything stays in sync with your iPhone and iPad through iCloud.
+    </p>
+    <p style="text-align:center">
+      <a class="btn" href="https://apps.apple.com/app/id6777648250">See it on the Mac App Store</a>
+    </p>
+    <p class="narrow" style="text-align:center;color:var(--sub);font-size:15px;margin-top:12px">
+      Already bought it on iPhone? The Mac version is included at no extra cost.
+    </p>
+    <div style="margin-top:34px">
+      <div class="macshot"><img src="img/en_mac_hub.jpg" alt="MyCIRQL on Mac: list on the left, relationship map in the middle, profile on the right" width="1600" height="1098" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <div class="promise">
+      <h2>Your information never leaves.</h2>
+      <p>Everything you enter is stored on your own device and in your own iCloud — a private area only you can reach. There is no social feed, and the developer has no way to see any of it.</p>
+      <p class="small">The one exception: when you look up an address by postal code, that postal code is sent to an external address service. Nothing else is ever sent outside.</p>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <h2>Who it is for</h2>
+    <ul>
+      <li><span class="b">●</span><span>Anyone keeping track of relatives and how a family fits together</span></li>
+      <li><span class="b">●</span><span>Anyone putting together a guest list for a wedding or a gathering</span></li>
+      <li><span class="b">●</span><span>Anyone gathering photos and important dates for the people they love</span></li>
+      <li><span class="b">●</span><span>Anyone who wants those connections to last, in their own hands</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <h2>Questions</h2>
+    <p class="sub">&nbsp;</p>
+    <details>
+      <summary>Is it free?</summary>
+      <p>Adding people and building your map and tree is free. A one-time Premium unlock (about US$1.99) adds CSV and PDF export, contacting people from the app, and saving diagrams as images. It is a single purchase, not a subscription.</p>
+    </details>
+    <details>
+      <summary>Where is my data kept?</summary>
+      <p>On your device and in your own iCloud. The developer cannot see it. See the <a href="privacy-en.html">privacy policy</a> for the details.</p>
+    </details>
+    <details>
+      <summary>Can I see the same data on my iPad and Mac?</summary>
+      <p>Yes. Sign in with the same Apple Account and everything appears on each device through iCloud.</p>
+    </details>
+    <details>
+      <summary>What happens when I get a new phone?</summary>
+      <p>Your data is in iCloud, so signing in on the new device brings it all across.</p>
+    </details>
+    <details>
+      <summary>Can I keep other people from reading it?</summary>
+      <p>Yes. You can require Face ID, Touch ID or a passcode when the app opens. There is also a mode that hides real names while you show the screen to someone.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Keep the people who matter<br>close at hand.</h2>
+    <a class="btn" href="https://apps.apple.com/app/id6777648250">Download on the App Store</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="privacy-en.html">Privacy Policy</a>
+      <a href="mailto:mycirql@gmail.com">Contact</a>
+      <a href="https://apps.apple.com/app/id6777648250">App Store</a>
+      <a href="./">日本語</a>
+    </div>
+    <div class="langs">
+      Privacy Policy:
+      <a href="privacy.html">日本語</a>·<a href="privacy-ko.html">한국어</a>·<a href="privacy-zh-Hans.html">简体中文</a>·<a href="privacy-zh-Hant.html">繁體中文</a>
+    </div>
+    <p>© 2026 MyCIRQL</p>
+  </div>
+</footer>
+
+</body>
+</html>
