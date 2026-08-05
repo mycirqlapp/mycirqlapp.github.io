@@ -92,6 +92,11 @@
   .feature h3{font-size:19px;margin-bottom:7px}
   .feature p{font-size:16.5px;color:var(--sub);line-height:1.7}
 
+  /* 実際の画面を大きく見せる枠。中身が読める大きさで出すのが目的。 */
+  .frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;
+         box-shadow:var(--shadow);background:var(--card)}
+  .frame img{width:100%;height:auto}
+
   /* 画面が広いときは中央にそろえる。狭いときは横スクロールになる。 */
   .shots{display:flex;gap:20px;overflow-x:auto;padding:6px 22px 22px;
          justify-content:safe center;
@@ -186,18 +191,22 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap inner">
-    <div class="text">
+  <div class="wrap">
+    <div class="text" style="text-align:center;max-width:740px;margin:0 auto">
       <h1>The people in your head,<br>drawn as a map.</h1>
       <p class="lead">Family, relatives, friends and places — laid out as a relationship map and a family tree. Who is whose what becomes obvious at a glance.</p>
       <p class="note">Not a social network. There is no one to connect with, and nothing is sent anywhere.</p>
-      <div class="cta">
+      <div class="cta" style="justify-content:center">
         <a class="btn" href="https://apps.apple.com/app/id6777648250">Download on the App Store</a>
         <span class="price">Free to start</span>
       </div>
     </div>
-    <div class="phone">
-      <img src="img/en_ip_1_hub.jpg" alt="The relationship map, with family, relatives and friends radiating from one person" width="540" height="1173">
+    <div class="frame" style="margin-top:38px">
+      <!-- On narrow screens, swap in a closer crop so the labels stay readable -->
+      <picture>
+        <source media="(max-width:700px)" srcset="img/en_detail_hub_sp.jpg" width="820" height="938">
+        <img src="img/en_detail_hub.jpg" alt="The relationship map: Father, Mother, Wife, Daughter, Sister, Grandfather, Friend and Cousin radiating from one person" width="1400" height="880">
+      </picture>
     </div>
   </div>
 </header>

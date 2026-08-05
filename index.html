@@ -95,6 +95,14 @@
   .feature p{font-size:17.5px;color:var(--sub);line-height:1.8}
 
   /* 画面ギャラリー（横スクロール） */
+  /* 実際の画面を大きく見せるブロック。中身が読める大きさで出すのが目的。 */
+  .showcase{margin-top:44px}
+  .showcase + .showcase{margin-top:56px}
+  .showcase h3{font-size:24px;margin-bottom:8px;text-align:center}
+  .showcase .cap{font-size:18px;color:var(--sub);max-width:660px;margin:0 auto 22px;text-align:center}
+  .frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
+  .frame img{width:100%;height:auto}
+
   /* 画面が広いときは中央にそろえる。狭いときは横スクロールになる。
      safe を付けないと、はみ出したときに左端の1枚がスクロールで出せなくなる。 */
   .shots{display:flex;gap:20px;overflow-x:auto;padding:6px 22px 22px;
@@ -199,18 +207,22 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap inner">
-    <div class="text">
+  <div class="wrap">
+    <div class="text" style="text-align:center;max-width:760px;margin:0 auto">
       <h1>頭の中の人間関係を、<br>そのまま図に。</h1>
       <p class="lead">家族・親戚・友人・お店を、相関図と家系図で整理するアプリです。<br>「この人は誰の何にあたるのか」が、ひと目でわかります。</p>
       <p class="note">SNSではありません。誰かとつながる機能も、あなたの情報を外に送る仕組みもありません。</p>
-      <div class="cta">
+      <div class="cta" style="justify-content:center">
         <a class="btn" href="https://apps.apple.com/jp/app/id6777648250">App Store でダウンロード</a>
         <span class="price">無料ではじめられます</span>
       </div>
     </div>
-    <div class="phone">
-      <img src="img/ip_1_hub.jpg" alt="相関図の画面。中心の人物から家族・親戚・友人へ線が伸びている" width="540" height="1173">
+    <div class="frame" style="margin-top:38px">
+      <!-- 狭い画面では、字が読めるように寄せた画像に差し替える -->
+      <picture>
+        <source media="(max-width:700px)" srcset="img/detail_hub_sp.jpg" width="820" height="937">
+        <img src="img/detail_hub.jpg" alt="相関図の画面。中心の人物から、父・母・妻・長女・友人・取引先などへ名前つきの線が伸びている" width="1400" height="840">
+      </picture>
     </div>
   </div>
 </header>
@@ -256,9 +268,40 @@
 </section>
 
 <section id="screens">
-  <p class="eyebrow">SCREENS</p>
-  <h2>画面を見てみる</h2>
-  <p class="sub">横にスクロールしてご覧ください。</p>
+  <div class="wrap">
+    <p class="eyebrow">SCREENS</p>
+    <h2>実際の画面</h2>
+    <p class="sub">冒頭の相関図も含め、すべてアプリで作った実物です。</p>
+
+    <div class="showcase" style="margin-top:34px">
+      <h3>家系図</h3>
+      <p class="cap">親子と夫婦を登録していくだけで、世代が縦に並んだ日本式の家系図ができあがります。長男・長女・次男といった順番も自動で付きます。</p>
+      <div class="frame">
+        <picture>
+          <source media="(max-width:700px)" srcset="img/detail_tree_sp.jpg" width="820" height="927">
+          <img src="img/detail_tree.jpg" alt="家系図。世代ごとに人が並び、長男・長女・次男などの順番が付いている" width="1400" height="923" loading="lazy">
+        </picture>
+      </div>
+    </div>
+
+    <div class="showcase">
+      <h3>アルバム</h3>
+      <p class="cap">写真を撮影日といっしょに残せます。「1972年6月14日（19歳）」のように、その人が何歳ごろの写真かが自動で表示されます。</p>
+      <div class="frame">
+        <picture>
+          <source media="(max-width:700px)" srcset="img/detail_album_sp.jpg" width="820" height="877">
+          <img src="img/detail_album.jpg" alt="アルバム。写真の上に撮影日と、そのときの年齢が表示されている" width="1400" height="827" loading="lazy">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>iPhone でも、iPad でも</h2>
+    <p class="sub">同じ内容が、どの端末でも見られます。</p>
+  </div>
   <div class="shots">
     <div class="shot">
       <div class="phone"><img src="img/ip_1_hub.jpg" alt="相関図（ハブ）の画面" width="540" height="1173" loading="lazy"></div>
