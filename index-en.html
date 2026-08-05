@@ -113,6 +113,21 @@
         color:var(--midori);border:1px solid color-mix(in srgb, var(--midori) 45%, transparent);
         padding:5px 15px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.06em}
 
+  /* Per-device screens (iPhone / iPad). Real full screens at their true aspect ratio. */
+  .deviceblock{margin-top:52px}
+  .deviceblock:first-child{margin-top:0}
+  .deviceblock h3{font-size:24px;text-align:center;margin-bottom:8px}
+  .deviceblock .cap{font-size:18px;color:var(--sub);max-width:680px;margin:0 auto 26px;text-align:center}
+  .screens-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
+  .screen{flex:0 0 auto;text-align:center}
+  .screen p{font-size:16px;color:var(--sub);margin-top:13px;line-height:1.55}
+  .screen.ph{width:214px}
+  .screen.ph .phone{max-width:214px;border-width:8px;border-radius:30px;margin:0}
+  .screen.tab{width:306px}
+  .pad{border:11px solid var(--deep);border-radius:24px;overflow:hidden;
+       background:var(--deep);box-shadow:var(--shadow)}
+  .pad img{width:100%;height:auto;border-radius:13px}
+
   .promise{background:var(--deep);color:#f2ede3;border-radius:22px;padding:46px 30px;text-align:center}
   .promise h2{color:#fff}
   .promise p{max-width:640px;margin:16px auto 0;color:#cfc7ba;font-size:18px}
@@ -251,10 +266,49 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap narrow" style="text-align:center">
-    <h2>iPhone, iPad and Mac</h2>
-    <p class="sub" style="margin-bottom:0">The same data syncs automatically through iCloud, so it looks the same on every device.</p>
+<section id="devices">
+  <div class="wrap">
+    <p class="eyebrow">iPhone · iPad</p>
+    <h2>On your iPhone, on your iPad.</h2>
+    <p class="sub">The same data syncs automatically through iCloud, so it works the same on every device.</p>
+
+    <div class="deviceblock">
+      <h3>iPhone</h3>
+      <p class="cap">Add people the moment they come to mind. Start from the hub, then move between the relationship map, the family tree and the list.</p>
+      <div class="screens-row">
+        <div class="screen ph">
+          <div class="phone"><img src="img/en_ip_hub.jpg" alt="iPhone hub screen" width="620" height="1347" loading="lazy"></div>
+          <p>Hub<br>your starting point</p>
+        </div>
+        <div class="screen ph">
+          <div class="phone"><img src="img/en_ip_tree.jpg" alt="iPhone family tree" width="620" height="1347" loading="lazy"></div>
+          <p>Family tree<br>generations stacked</p>
+        </div>
+        <div class="screen ph">
+          <div class="phone"><img src="img/en_ip_list.jpg" alt="iPhone list screen" width="620" height="1347" loading="lazy"></div>
+          <p>List<br>sorted by closeness</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="deviceblock">
+      <h3>iPad</h3>
+      <p class="cap">The larger iPad screen gives the map and the tree more room to breathe. Everything works exactly as it does on iPhone.</p>
+      <div class="screens-row">
+        <div class="screen tab">
+          <div class="pad"><img src="img/en_ipad_hub.jpg" alt="iPad hub screen" width="1000" height="1334" loading="lazy"></div>
+          <p>Hub</p>
+        </div>
+        <div class="screen tab">
+          <div class="pad"><img src="img/en_ipad_tree.jpg" alt="iPad family tree" width="1000" height="1334" loading="lazy"></div>
+          <p>Family tree</p>
+        </div>
+        <div class="screen tab">
+          <div class="pad"><img src="img/en_ipad_list.jpg" alt="iPad list screen" width="1000" height="1334" loading="lazy"></div>
+          <p>List</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -276,6 +330,11 @@
     </p>
     <div style="margin-top:34px">
       <div class="macshot"><img src="img/en_mac_hub.jpg" alt="MyCIRQL on Mac: list on the left, relationship map in the middle, profile on the right" width="1600" height="1098" loading="lazy"></div>
+      <p style="text-align:center;color:var(--sub);font-size:16px;margin-top:6px">The hub, with the list, the relationship map and a profile side by side.</p>
+    </div>
+    <div style="margin-top:26px">
+      <div class="macshot"><img src="img/en_mac_tree.jpg" alt="The family tree on Mac, spread across the full width" width="1600" height="1098" loading="lazy"></div>
+      <p style="text-align:center;color:var(--sub);font-size:16px;margin-top:6px">The family tree, spread across the full width of the screen.</p>
     </div>
   </div>
 </section>
