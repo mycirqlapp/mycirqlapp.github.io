@@ -123,23 +123,6 @@
         color:var(--midori);border:1px solid color-mix(in srgb, var(--midori) 45%, transparent);
         padding:5px 15px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:.06em}
 
-  /* 端末別の画面（iPhone / iPad）。実際の全画面を、本来の縦横比のまま端末サイズで見せる。 */
-  .deviceblock{margin-top:52px}
-  .deviceblock:first-child{margin-top:0}
-  .deviceblock h3{font-size:24px;text-align:center;margin-bottom:8px}
-  .deviceblock .cap{font-size:18px;color:var(--sub);max-width:680px;margin:0 auto 26px;text-align:center}
-  .screens-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
-  .screen{flex:0 0 auto;text-align:center}
-  .screen p{font-size:16px;color:var(--sub);margin-top:13px;line-height:1.55}
-  /* iPhone の枠。画像は width:100%/height:auto なので比率はそのまま。 */
-  .screen.ph{width:214px}
-  .screen.ph .phone{max-width:214px;border-width:8px;border-radius:30px;margin:0}
-  /* iPad の枠。 */
-  .screen.tab{width:306px}
-  .pad{border:11px solid var(--deep);border-radius:24px;overflow:hidden;
-       background:var(--deep);box-shadow:var(--shadow)}
-  .pad img{width:100%;height:auto;border-radius:13px}
-
   /* プライバシー */
   .promise{background:var(--deep);color:#f2ede3;border-radius:22px;padding:46px 30px;text-align:center}
   .promise h2{color:#fff}
@@ -316,46 +299,20 @@
 
 <section id="devices">
   <div class="wrap">
-    <p class="eyebrow">iPhone · iPad</p>
-    <h2>iPhone でも、iPad でも。</h2>
-    <p class="sub">同じ内容が iCloud で自動的に同期され、どの端末でも同じように使えます。</p>
+    <p class="eyebrow">iPhone · iPad · Mac</p>
+    <h2>どの端末でも、同じつながり。</h2>
+    <p class="sub">同じ内容が iCloud で自動的に同期され、iPhone でも iPad でも、同じように使えます。</p>
 
-    <div class="deviceblock">
-      <h3>iPhone</h3>
-      <p class="cap">ふだん持ち歩く iPhone で、思いついたときにすぐ登録。ハブ画面を起点に、相関図・家系図・一覧へ切り替えて使います。</p>
-      <div class="screens-row">
-        <div class="screen ph">
-          <div class="phone"><img src="img/ip_hub.jpg" alt="iPhoneのハブ画面。中心の輪から各機能に分かれている" width="620" height="1347" loading="lazy"></div>
-          <p>ハブ画面<br>ここから各機能へ</p>
-        </div>
-        <div class="screen ph">
-          <div class="phone"><img src="img/ip_tree.jpg" alt="iPhoneの家系図。世代が縦に並ぶ" width="620" height="1347" loading="lazy"></div>
-          <p>家系図<br>世代が縦に並ぶ</p>
-        </div>
-        <div class="screen ph">
-          <div class="phone"><img src="img/ip_list.jpg" alt="iPhoneの一覧画面" width="620" height="1347" loading="lazy"></div>
-          <p>一覧<br>関連度や種類で整理</p>
-        </div>
-      </div>
+    <div class="showcase" style="margin-top:34px">
+      <h3>iPad の大きな画面で、広々と</h3>
+      <p class="cap">相関図が画面いっぱいに広がります。中心の人から、父・母・妻・友人・いとこへと、名前つきの線でつながりをたどれます。</p>
+      <div class="frame"><img src="img/ipad_map.jpg" alt="iPadの相関図。中心の人物から多くの関係が名前つきの線で放射状に広がっている" width="1300" height="730" loading="lazy"></div>
     </div>
 
-    <div class="deviceblock">
-      <h3>iPad</h3>
-      <p class="cap">大きな画面の iPad なら、相関図や家系図をより広々と見渡せます。操作のしかたは iPhone とまったく同じです。</p>
-      <div class="screens-row">
-        <div class="screen tab">
-          <div class="pad"><img src="img/ipad_hub.jpg" alt="iPadのハブ画面" width="1000" height="1334" loading="lazy"></div>
-          <p>ハブ画面</p>
-        </div>
-        <div class="screen tab">
-          <div class="pad"><img src="img/ipad_tree.jpg" alt="iPadの家系図" width="1000" height="1334" loading="lazy"></div>
-          <p>家系図</p>
-        </div>
-        <div class="screen tab">
-          <div class="pad"><img src="img/ipad_list.jpg" alt="iPadの一覧画面" width="1000" height="1334" loading="lazy"></div>
-          <p>一覧</p>
-        </div>
-      </div>
+    <div class="showcase">
+      <h3>家系図も、まとめて見渡せる</h3>
+      <p class="cap">世代を縦に並べた日本式の家系図。iPad なら、たくさんの世代も一度に見渡せます。</p>
+      <div class="frame"><img src="img/ipad_fam.jpg" alt="iPadの家系図。複数の世代が縦に並んでいる" width="1300" height="730" loading="lazy"></div>
     </div>
   </div>
 </section>
