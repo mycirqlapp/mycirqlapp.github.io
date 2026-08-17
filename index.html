@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L5DXZ6SEG9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L5DXZ6SEG9');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MyCIRQL（マイサークル）｜人間関係を、そのまま図に。</title>
@@ -34,7 +42,6 @@
     --line:#e4ddcf; --akane:#c0414a; --midori:#3c9460; --gold:#b9933f;
     --deep:#2b2622; --shadow:0 12px 34px rgba(60,45,30,.10);
   }
-
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
@@ -45,8 +52,6 @@
   img{max-width:100%;display:block}
   .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
   .narrow{max-width:760px;margin:0 auto}
-
-  /* ヘッダー */
   nav{padding:14px 0;border-bottom:1px solid var(--line);
       background:color-mix(in srgb, var(--bg) 88%, transparent);
       position:sticky;top:0;backdrop-filter:blur(10px);z-index:20}
@@ -59,8 +64,6 @@
   nav .navlinks{display:flex;gap:20px}
   nav .navlinks a{color:var(--sub);text-decoration:none;font-size:17px;white-space:nowrap}
   nav .navlinks a:hover{color:var(--ink)}
-
-  /* ボタン */
   .btn{display:inline-flex;align-items:center;gap:9px;background:var(--akane);color:#fff;
        text-decoration:none;padding:13px 26px;border-radius:999px;font-size:18px;font-weight:600;
        box-shadow:0 6px 18px rgba(192,65,74,.28);white-space:nowrap;
@@ -68,8 +71,6 @@
   .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(192,65,74,.34)}
   .btn.ghost{background:transparent;color:var(--akane);border:1.5px solid var(--akane);box-shadow:none}
   .btn.ghost:hover{background:color-mix(in srgb, var(--akane) 10%, transparent)}
-
-  /* ヒーロー */
   .hero{padding:60px 0 20px}
   .hero .inner{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
   .hero h1{font-size:40px;line-height:1.42;letter-spacing:.01em;margin-bottom:20px;text-wrap:balance}
@@ -80,31 +81,21 @@
   .phone{border:9px solid var(--deep);border-radius:36px;overflow:hidden;box-shadow:var(--shadow);
          background:var(--deep);max-width:262px;margin:0 auto}
   .phone img{border-radius:27px}
-
-  /* セクション */
   section{padding:56px 0}
   .eyebrow{text-align:center;font-size:15px;letter-spacing:.22em;color:var(--gold);margin-bottom:10px}
   h2{font-size:30px;text-align:center;margin-bottom:10px;letter-spacing:.02em;text-wrap:balance}
   .sub{text-align:center;color:var(--sub);font-size:19px;margin-bottom:38px}
-
-  /* 特徴 */
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .feature{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
   .feature .ico{font-size:30px;margin-bottom:10px}
   .feature h3{font-size:20px;margin-bottom:7px}
   .feature p{font-size:17.5px;color:var(--sub);line-height:1.8}
-
-  /* 画面ギャラリー（横スクロール） */
-  /* 実際の画面を大きく見せるブロック。中身が読める大きさで出すのが目的。 */
   .showcase{margin-top:44px}
   .showcase + .showcase{margin-top:56px}
   .showcase h3{font-size:24px;margin-bottom:8px;text-align:center}
   .showcase .cap{font-size:18px;color:var(--sub);max-width:660px;margin:0 auto 22px;text-align:center}
   .frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
   .frame img{width:100%;height:auto}
-
-  /* 画面が広いときは中央にそろえる。狭いときは横スクロールになる。
-     safe を付けないと、はみ出したときに左端の1枚がスクロールで出せなくなる。 */
   .shots{display:flex;gap:20px;overflow-x:auto;padding:6px 22px 22px;
          justify-content:safe center;
          scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
@@ -113,8 +104,6 @@
   .shot{flex:0 0 214px;scroll-snap-align:center}
   .shot .phone{max-width:214px;border-width:8px;border-radius:30px}
   .shot p{text-align:center;font-size:16px;color:var(--sub);margin-top:12px;line-height:1.6}
-
-  /* Mac 版 */
   .mac{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .macshot{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px}
   .macgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px}
@@ -122,20 +111,14 @@
   .pill{display:inline-block;background:color-mix(in srgb, var(--midori) 15%, transparent);
         color:var(--midori);border:1px solid color-mix(in srgb, var(--midori) 45%, transparent);
         padding:5px 15px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:.06em}
-
-  /* プライバシー */
   .promise{background:var(--deep);color:#f2ede3;border-radius:22px;padding:46px 30px;text-align:center}
   .promise h2{color:#fff}
   .promise p{max-width:640px;margin:16px auto 0;color:#cfc7ba;font-size:19px}
   .promise .small{font-size:16px;color:#9d9487;margin-top:20px}
-
-  /* こんな方に */
   .who ul{max-width:620px;margin:0 auto;list-style:none}
   .who li{background:var(--card);border:1px solid var(--line);border-radius:14px;
           padding:16px 20px;margin-bottom:12px;font-size:19px;display:flex;gap:13px;align-items:flex-start}
   .who li .b{color:var(--akane);font-weight:700;flex:0 0 auto}
-
-  /* よくある質問 */
   details{background:var(--card);border:1px solid var(--line);border-radius:14px;
           padding:16px 20px;margin-bottom:12px}
   summary{font-size:19px;font-weight:600;cursor:pointer;list-style:none;
@@ -144,19 +127,14 @@
   summary::after{content:"＋";color:var(--akane);font-weight:400;flex:0 0 auto}
   details[open] summary::after{content:"−"}
   details p{font-size:17.5px;color:var(--sub);margin-top:12px}
-
-  /* 最後の誘導 */
   .final{text-align:center}
   .final h2{margin-bottom:22px}
-
-  /* フッター */
   footer{border-top:1px solid var(--line);padding:40px 0 60px;text-align:center;color:var(--sub);font-size:16px}
   footer a{color:var(--akane);text-decoration:none}
   footer .links{margin-bottom:14px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
   footer .links a{font-size:18px}
   footer .langs{font-size:15px;margin-bottom:20px}
   footer .langs a{color:var(--sub);margin:0 7px}
-
   @media(max-width:860px){
     .grid{grid-template-columns:1fr 1fr}
     .hero .inner{grid-template-columns:1fr;gap:32px}
@@ -171,7 +149,6 @@
     body{font-size:19px}
     .hero h1{font-size:26px}
     h2{font-size:25px}
-    /* 上のバーが横にはみ出さないよう、ロゴとボタンを小さくする */
     nav{padding:10px 0}
     nav .wrap{padding:0 16px;gap:10px}
     .brand img{width:32px;height:32px}
@@ -187,7 +164,6 @@
 </style>
 </head>
 <body>
-
 <nav>
   <div class="wrap">
     <a class="brand" href="#top">
@@ -202,10 +178,9 @@
       <a href="#privacy">プライバシー</a>
     </div>
     <a class="lang" href="index-en.html">English</a>
-    <a class="btn" href="https://apps.apple.com/jp/app/id6777648250">App Store</a>
+    <a class="btn" href="https://apps.apple.com/jp/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'nav'})">App Store</a>
   </div>
 </nav>
-
 <header class="hero" id="top">
   <div class="wrap">
     <div class="text" style="text-align:center;max-width:760px;margin:0 auto">
@@ -213,12 +188,11 @@
       <p class="lead">家族・親戚・友人・お店を、相関図と家系図で整理するアプリです。<br>「この人は誰の何にあたるのか」が、ひと目でわかります。</p>
       <p class="note">SNSではありません。誰かとつながる機能も、あなたの情報を外に送る仕組みもありません。</p>
       <div class="cta" style="justify-content:center">
-        <a class="btn" href="https://apps.apple.com/jp/app/id6777648250">App Store でダウンロード</a>
+        <a class="btn" href="https://apps.apple.com/jp/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'hero'})">App Store でダウンロード</a>
         <span class="price">無料ではじめられます</span>
       </div>
     </div>
     <div class="frame" style="margin-top:38px">
-      <!-- 狭い画面では、字が読めるように寄せた画像に差し替える -->
       <picture>
         <source media="(max-width:700px)" srcset="img/detail_hub_sp.jpg" width="820" height="937">
         <img src="img/detail_hub.jpg" alt="相関図の画面。中心の人物から、父・母・妻・長女・友人・取引先などへ名前つきの線が伸びている" width="1400" height="840">
@@ -226,7 +200,6 @@
     </div>
   </div>
 </header>
-
 <section id="features">
   <div class="wrap">
     <p class="eyebrow">FEATURES</p>
@@ -266,13 +239,11 @@
     </div>
   </div>
 </section>
-
 <section id="screens">
   <div class="wrap">
     <p class="eyebrow">SCREENS</p>
     <h2>実際の画面</h2>
     <p class="sub">冒頭の相関図も含め、すべてアプリで作った実物です。</p>
-
     <div class="showcase" style="margin-top:34px">
       <h3>家系図</h3>
       <p class="cap">親子と夫婦を登録していくだけで、世代が縦に並んだ日本式の家系図ができあがります。長男・長女・次男といった順番も自動で付きます。</p>
@@ -283,7 +254,6 @@
         </picture>
       </div>
     </div>
-
     <div class="showcase">
       <h3>アルバム</h3>
       <p class="cap">写真を撮影日といっしょに残せます。「1972年6月14日（19歳）」のように、その人が何歳ごろの写真かが自動で表示されます。</p>
@@ -296,19 +266,16 @@
     </div>
   </div>
 </section>
-
 <section id="devices">
   <div class="wrap">
     <p class="eyebrow">iPhone · iPad · Mac</p>
     <h2>どの端末でも、同じつながり。</h2>
     <p class="sub">同じ内容が iCloud で自動的に同期され、iPhone でも iPad でも、同じように使えます。</p>
-
     <div class="showcase" style="margin-top:34px">
       <h3>iPad の大きな画面で、広々と</h3>
       <p class="cap">相関図が画面いっぱいに広がります。中心の人から、父・母・妻・友人・いとこへと、名前つきの線でつながりをたどれます。</p>
       <div class="frame"><img src="img/ipad_map.jpg" alt="iPadの相関図。中心の人物から多くの関係が名前つきの線で放射状に広がっている" width="1300" height="730" loading="lazy"></div>
     </div>
-
     <div class="showcase">
       <h3>家系図も、まとめて見渡せる</h3>
       <p class="cap">世代を縦に並べた日本式の家系図。iPad なら、たくさんの世代も一度に見渡せます。</p>
@@ -316,7 +283,6 @@
     </div>
   </div>
 </section>
-
 <section class="mac" id="mac">
   <div class="wrap">
     <p class="eyebrow">FOR MAC</p>
@@ -328,14 +294,13 @@
       iPhone・iPad と同じデータを iCloud で共有できます。
     </p>
     <p style="text-align:center">
-      <a class="btn" href="https://apps.apple.com/jp/app/id6777648250">Mac App Store で見る</a>
+      <a class="btn" href="https://apps.apple.com/jp/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'mac'})">Mac App Store で見る</a>
     </p>
     <p class="narrow" style="text-align:center;color:var(--sub);font-size:16px;margin-top:12px">
       iPhone 版をお持ちの方は、追加のお支払いなくそのままお使いいただけます。
     </p>
   </div>
 </section>
-
 <section id="privacy">
   <div class="wrap">
     <div class="promise">
@@ -345,7 +310,6 @@
     </div>
   </div>
 </section>
-
 <section class="who">
   <div class="wrap">
     <h2>こんな方に</h2>
@@ -357,7 +321,6 @@
     </ul>
   </div>
 </section>
-
 <section>
   <div class="wrap narrow">
     <h2>よくある質問</h2>
@@ -384,20 +347,18 @@
     </details>
   </div>
 </section>
-
 <section class="final">
   <div class="wrap">
     <h2>大切な人とのつながりを、<br>手元に残しませんか。</h2>
-    <a class="btn" href="https://apps.apple.com/jp/app/id6777648250">App Store でダウンロード</a>
+    <a class="btn" href="https://apps.apple.com/jp/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'final'})">App Store でダウンロード</a>
   </div>
 </section>
-
 <footer>
   <div class="wrap">
     <div class="links">
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="mailto:mycirql@gmail.com">お問い合わせ</a>
-      <a href="https://apps.apple.com/jp/app/id6777648250">App Store</a>
+      <a href="https://apps.apple.com/jp/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'footer'})">App Store</a>
     </div>
     <div class="langs">
       Privacy Policy:
@@ -406,6 +367,5 @@
     <p>© 2026 MyCIRQL</p>
   </div>
 </footer>
-
 </body>
 </html>
