@@ -109,9 +109,10 @@
   .shot .phone{max-width:214px;border-width:8px;border-radius:30px}
   .shot p{text-align:center;font-size:16px;color:var(--sub);margin-top:12px;line-height:1.6}
   .mac{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .macshot{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px}
-  .macgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px}
-  .macgrid p{font-size:17px;color:var(--sub);text-align:center}
+  /* 親の .wrap（最大1040px）より広く見せる。細かい図は大きく出さないと読めないため。 */
+  .bleed{width:min(1400px,calc(100vw - 40px));margin-left:50%;transform:translateX(-50%)}
+  .bleed .frame{border-radius:14px}
+  .bleed p{font-size:16px;color:var(--sub);text-align:center;margin-top:14px}
   .pill{display:inline-block;background:color-mix(in srgb, var(--midori) 15%, transparent);
         color:var(--midori);border:1px solid color-mix(in srgb, var(--midori) 45%, transparent);
         padding:5px 15px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:.06em}
@@ -145,7 +146,6 @@
     .hero h1{font-size:30px}
     .hero .cta{justify-content:center}
     .hero .text{text-align:center}
-    .macgrid{grid-template-columns:1fr}
     nav .navlinks{display:none}
   }
   @media(max-width:560px){
@@ -199,8 +199,8 @@
     </div>
     <div class="frame" style="margin-top:38px">
       <picture>
-        <source media="(max-width:700px)" srcset="img/detail_hub_sp.jpg" width="820" height="937">
-        <img src="img/detail_hub.jpg" alt="相関図の画面。中心の人物から、父・母・妻・長女・友人・取引先などへ名前つきの線が伸びている" width="1400" height="840">
+        <source media="(max-width:700px)" srcset="img/hub3_ja_sp.jpg" width="820" height="738">
+        <img src="img/hub3_ja.jpg" alt="相関図の画面。中心の人物のまわりが親族・友人・職場の3つのエリアに色分けされ、父・母・妻・長女・友人・取引先などへ名前つきの線が伸びている" width="1400" height="984">
       </picture>
     </div>
   </div>
@@ -255,6 +255,15 @@
     <h2>実際の画面</h2>
     <p class="sub">冒頭の相関図も含め、すべてアプリで作った実物です。</p>
     <div class="showcase" style="margin-top:34px">
+      <h3>関係を、系統だてて見る</h3>
+      <p class="cap">冒頭のような放射状の「ハブ」だけでなく、同じつながりを縦の系統図としても見られます。親族は左、友人は右、職場は下と、エリアごとに色分けされたまま列に並ぶので、人数が増えても誰がどのグループの人か迷いません。</p>
+      <div class="bleed">
+        <div class="frame">
+          <img src="img/chart3_ja.jpg" alt="相関図の系統表示。親族（左）・友人（右）・職場（下）の色分けされたエリアごとに、祖父母・両親・きょうだい・友人・同僚が列に並んでいる" width="1400" height="1057" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="showcase">
       <h3>家系図</h3>
       <p class="cap">親子と夫婦を登録していくだけで、世代が縦に並んだ日本式の家系図ができあがります。長男・長女・次男といった順番も自動で付きます。</p>
       <div class="frame">
@@ -350,23 +359,11 @@
       キーボードで入力しやすく、たくさんの人をまとめて整理するのに向いています。
       iPhone・iPad と同じデータを iCloud で共有できます。
     </p>
-    <div class="macgrid">
-      <div>
-        <div class="macshot"><img src="img/mac_hub_v3.jpg" alt="Mac版の相関図。中心の人物を囲む円が親族・友人・職場の3エリアに色分けされ、それぞれに名前つきの線でつながっている" width="1600" height="1158" loading="lazy"></div>
-        <p>親族・友人・職場、3つのエリアに自動で色分け</p>
+    <div class="bleed" style="margin-top:30px">
+      <div class="frame">
+        <img src="img/mac_win_ja.jpg" alt="Mac版の画面。左に連絡先の一覧、中央に親族・友人・職場の3エリアに色分けされた相関図、右にその人のプロフィールが横に並んでいる" width="1600" height="1105" loading="lazy">
       </div>
-      <div>
-        <div class="macshot"><img src="img/mac_chart_v3.jpg" alt="Mac版の系統だてた相関図。祖父母・叔父叔母・いとこなどがエリアごとに列で整理されている" width="1600" height="1158" loading="lazy"></div>
-        <p>新登場：エリアごとに系統だてて見る表示も選べます</p>
-      </div>
-      <div>
-        <div class="macshot"><img src="img/mac_tree_v3.jpg" alt="Mac版の家系図。世代ごとに人が並び、夫婦・離婚・死別の線種が凡例つきで表示されている" width="1600" height="1158" loading="lazy"></div>
-        <p>家系図も、広い画面でまとめて見渡せる</p>
-      </div>
-      <div>
-        <div class="macshot"><img src="img/mac_album_v3.jpg" alt="Mac版のアルバム。写真の上に撮影日とそのときの年齢が並んで表示されている" width="1600" height="1158" loading="lazy"></div>
-        <p>思い出のアルバムも、大きな画面で</p>
-      </div>
+      <p>一覧・相関図・プロフィールを横に並べて表示。下のボタンで「ハブ／家系図／相関図／組織図」を切り替えられます。</p>
     </div>
     <p style="text-align:center;margin-top:32px">
       <a class="btn" href="https://apps.apple.com/jp/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'mac'})">Mac App Store で見る</a>

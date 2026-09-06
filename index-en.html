@@ -97,6 +97,10 @@
   .feature .ico{font-size:30px;margin-bottom:10px}
   .feature h3{font-size:19px;margin-bottom:7px}
   .feature p{font-size:16.5px;color:var(--sub);line-height:1.7}
+  .showcase{margin-top:44px}
+  .showcase + .showcase{margin-top:56px}
+  .showcase h3{font-size:23px;margin-bottom:8px;text-align:center}
+  .showcase .cap{font-size:17px;color:var(--sub);max-width:660px;margin:0 auto 22px;text-align:center}
   .frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;
          box-shadow:var(--shadow);background:var(--card)}
   .frame img{width:100%;height:auto}
@@ -109,10 +113,10 @@
   .shot .phone{max-width:214px;border-width:8px;border-radius:30px}
   .shot p{text-align:center;font-size:15px;color:var(--sub);margin-top:12px;line-height:1.5}
   .mac{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .macshot{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px}
-  .macgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px}
-  .macgrid p{font-size:16px;color:var(--sub);text-align:center}
-  @media(max-width:860px){.macgrid{grid-template-columns:1fr}}
+  /* Break out of the 1040px .wrap — dense diagrams need the extra width to stay readable. */
+  .bleed{width:min(1400px,calc(100vw - 40px));margin-left:50%;transform:translateX(-50%)}
+  .bleed .frame{border-radius:14px}
+  .bleed p{font-size:15px;color:var(--sub);text-align:center;margin-top:14px}
   .pill{display:inline-block;background:color-mix(in srgb, var(--midori) 15%, transparent);
         color:var(--midori);border:1px solid color-mix(in srgb, var(--midori) 45%, transparent);
         padding:5px 15px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.06em}
@@ -200,8 +204,8 @@
     </div>
     <div class="frame" style="margin-top:38px">
       <picture>
-        <source media="(max-width:700px)" srcset="img/en_detail_hub_sp.jpg" width="820" height="938">
-        <img src="img/en_detail_hub.jpg" alt="The relationship map: Father, Mother, Wife, Daughter, Sister, Grandfather, Friend and Cousin radiating from one person" width="1400" height="880">
+        <source media="(max-width:700px)" srcset="img/hub3_en_sp.jpg" width="820" height="691">
+        <img src="img/hub3_en.jpg" alt="The relationship map. The circle around the person in the middle is color-coded into Relatives, Friends and Workplace, with named lines to Father, Mother, Wife, Daughter, Sister, Grandfather and Friend" width="1400" height="1083">
       </picture>
     </div>
   </div>
@@ -246,6 +250,22 @@
         <div class="ico">📤</div>
         <h3>Share with people nearby</h3>
         <p>Select a family or group and hand it over with AirDrop — it saves the person receiving it from typing everything in by hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="screens">
+  <div class="wrap">
+    <p class="eyebrow">SCREENS</p>
+    <h2>The same circle, laid out in columns.</h2>
+    <p class="sub">Everything here is a real screen from the app.</p>
+    <div class="showcase" style="margin-top:34px">
+      <h3>A chart view, grouped by area</h3>
+      <p class="cap">Besides the radiating hub at the top of this page, the same connections can be shown as a vertical chart. Relatives run down the left, friends down the right and the workplace sits below — each keeping its own colour, so it stays clear who belongs to which group however many people you add.</p>
+      <div class="bleed">
+        <div class="frame">
+          <img src="img/chart3_en.jpg" alt="The relationship chart view. Grandparents, parents, siblings, friends and colleagues are laid out in columns inside the colour-coded Relatives, Friends and Workplace areas" width="1400" height="1000" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
@@ -324,23 +344,11 @@
       It is faster to type on, and easier when you are organising a lot of people at once.
       Everything stays in sync with your iPhone and iPad through iCloud.
     </p>
-    <div class="macgrid">
-      <div>
-        <div class="macshot"><img src="img/mac_hub_v3.jpg" alt="The relationship map on Mac. The circle around the centre person is color-coded into Relatives, Friends and Workplace, each connected by named lines" width="1600" height="1158" loading="lazy"></div>
-        <p>Relatives, friends and workplace, automatically color-coded into three areas</p>
+    <div class="bleed" style="margin-top:30px">
+      <div class="frame">
+        <img src="img/mac_win_en.jpg" alt="MyCIRQL on Mac. The contact list sits on the left and the relationship map fills the middle, color-coded into Relatives, Friends and Workplace" width="1600" height="1105" loading="lazy">
       </div>
-      <div>
-        <div class="macshot"><img src="img/mac_chart_v3.jpg" alt="The organized relationship chart on Mac. Grandparents, aunts/uncles and cousins are laid out in columns by area" width="1600" height="1158" loading="lazy"></div>
-        <p>New: an organized, column-by-area view is also available</p>
-      </div>
-      <div>
-        <div class="macshot"><img src="img/mac_tree_v3.jpg" alt="The family tree on Mac. Generations are lined up with a legend for married, divorced and widowed lines" width="1600" height="1158" loading="lazy"></div>
-        <p>The family tree, laid out across the wider screen</p>
-      </div>
-      <div>
-        <div class="macshot"><img src="img/mac_album_v3.jpg" alt="The photo album on Mac, with the date and age shown above each photo" width="1600" height="1158" loading="lazy"></div>
-        <p>Photo albums, on the bigger screen</p>
-      </div>
+      <p>The list, the map and the profile side by side. The buttons along the bottom switch between Hub, Family tree, Relationship chart and Org chart.</p>
     </div>
     <p style="text-align:center;margin-top:32px">
       <a class="btn" href="https://apps.apple.com/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'mac_en'})">See it on the Mac App Store</a>
