@@ -109,7 +109,10 @@
   .shot .phone{max-width:214px;border-width:8px;border-radius:30px}
   .shot p{text-align:center;font-size:15px;color:var(--sub);margin-top:12px;line-height:1.5}
   .mac{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .macshot{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .macshot{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px}
+  .macgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px}
+  .macgrid p{font-size:16px;color:var(--sub);text-align:center}
+  @media(max-width:860px){.macgrid{grid-template-columns:1fr}}
   .pill{display:inline-block;background:color-mix(in srgb, var(--midori) 15%, transparent);
         color:var(--midori);border:1px solid color-mix(in srgb, var(--midori) 45%, transparent);
         padding:5px 15px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.06em}
@@ -212,7 +215,7 @@
       <div class="feature">
         <div class="ico">🕸️</div>
         <h3>See the connections</h3>
-        <p>Pick who is whose what, and the relationships fan out around that person — the way a cast chart does.</p>
+        <p>Pick who is whose what, and the relationships fan out around that person. Relatives, friends and workplace are automatically color-coded into three areas, so you can tell them apart at a glance.</p>
       </div>
       <div class="feature">
         <div class="ico">🌳</div>
@@ -321,7 +324,25 @@
       It is faster to type on, and easier when you are organising a lot of people at once.
       Everything stays in sync with your iPhone and iPad through iCloud.
     </p>
-    <p style="text-align:center">
+    <div class="macgrid">
+      <div>
+        <div class="macshot"><img src="img/mac_hub_v3.jpg" alt="The relationship map on Mac. The circle around the centre person is color-coded into Relatives, Friends and Workplace, each connected by named lines" width="1600" height="1158" loading="lazy"></div>
+        <p>Relatives, friends and workplace, automatically color-coded into three areas</p>
+      </div>
+      <div>
+        <div class="macshot"><img src="img/mac_chart_v3.jpg" alt="The organized relationship chart on Mac. Grandparents, aunts/uncles and cousins are laid out in columns by area" width="1600" height="1158" loading="lazy"></div>
+        <p>New: an organized, column-by-area view is also available</p>
+      </div>
+      <div>
+        <div class="macshot"><img src="img/mac_tree_v3.jpg" alt="The family tree on Mac. Generations are lined up with a legend for married, divorced and widowed lines" width="1600" height="1158" loading="lazy"></div>
+        <p>The family tree, laid out across the wider screen</p>
+      </div>
+      <div>
+        <div class="macshot"><img src="img/mac_album_v3.jpg" alt="The photo album on Mac, with the date and age shown above each photo" width="1600" height="1158" loading="lazy"></div>
+        <p>Photo albums, on the bigger screen</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:32px">
       <a class="btn" href="https://apps.apple.com/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'mac_en'})">See it on the Mac App Store</a>
     </p>
     <p class="narrow" style="text-align:center;color:var(--sub);font-size:15px;margin-top:12px">
