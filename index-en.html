@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L5DXZ6SEG9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L5DXZ6SEG9');
-</script>
+<!-- Google アナリティクス（GA4）は、Cookie に「同意する」を選んだ人だけ cookie-consent.js が読み込む（同意前は何も読み込まない） -->
+<script src="cookie-consent.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MyCIRQL: Distant Family, Kept</title>
@@ -364,7 +358,7 @@
     <div class="promise">
       <h2>Your information never leaves.</h2>
       <p>Everything you enter is stored on your own device and in your own iCloud — a private area only you can reach. There is no social feed, and the developer has no way to see any of it.</p>
-      <p class="small">The one exception: when you look up an address by postal code, that postal code is sent to an external address service. Nothing else is ever sent outside.</p>
+      <p class="small">Nothing is sent to the developer’s servers. The app talks to the outside only for iCloud sync, for checking purchases, when a postal code is sent to an external address service to fill in an address (Japanese display only), and when you tap “Open in Maps,” “WhatsApp,” and the like, which hand the address or number to that app.</p>
     </div>
   </div>
 </section>
@@ -416,6 +410,7 @@
     <div class="links">
       <a href="privacy-en.html">Privacy Policy</a>
       <a href="mailto:mycirql@gmail.com">Contact</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
       <a href="https://apps.apple.com/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'footer_en'})">App Store</a>
       <a href="./">日本語</a>
     </div>

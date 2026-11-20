@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L5DXZ6SEG9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L5DXZ6SEG9');
-</script>
+<!-- Google アナリティクス（GA4）は、Cookie に「同意する」を選んだ人だけ cookie-consent.js が読み込む（同意前は何も読み込まない） -->
+<script src="cookie-consent.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>遠い親戚も疎遠な人も、このアプリで管理 MyCIRQL（マイサークル）</title>
@@ -379,7 +373,7 @@
     <div class="promise">
       <h2>あなたの情報を、外に出しません。</h2>
       <p>このアプリで登録した内容は、あなたの端末と、あなたの iCloud（プライベート領域）にだけ保存されます。SNSのように誰かとつながったり、開発者がデータを受け取ったりすることは一切ありません。</p>
-      <p class="small">※ 住所を自動で入力するためだけに、郵便番号を調べるときに限り、外部の住所サービスへ郵便番号を送ります。それ以外にデータを外部へ送ることはありません。</p>
+      <p class="small">※ 開発者のサーバーへデータを送ることはありません。アプリ外との通信は、iCloud との同期、購入の確認、郵便番号から住所を入力するとき（日本語表示のみ。郵便番号だけを外部の住所サービスへ送信）、あなたが「地図で開く」「WhatsApp」などを押したときの受け渡しだけです。</p>
     </div>
   </div>
 </section>
@@ -431,6 +425,7 @@
     <div class="links">
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="mailto:mycirql@gmail.com">お問い合わせ</a>
+      <a href="#" data-cookie-settings>Cookie の設定</a>
       <a href="https://apps.apple.com/jp/app/id6777648250" onclick="gtag('event','app_store_click',{'button_location':'footer'})">App Store</a>
     </div>
     <div class="langs">
