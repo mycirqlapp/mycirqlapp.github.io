@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kebijakan Privasi｜MyCIRQL</title>
-<meta name="description" content="Kebijakan privasi MyCIRQL. Data Anda hanya disimpan di perangkat Anda dan iCloud atau cadangan akun Google Anda sendiri, dan tidak pernah dikirim ke server eksternal.">
+<meta name="description" content="Kebijakan privasi MyCIRQL. Data Anda disimpan di perangkat Anda dan di iCloud atau cadangan akun Google Anda sendiri, dan tidak dikirim ke server pengembang. Kebijakan ini juga menjelaskan pencarian kode pos, fitur berbagi, dan pembelian.">
 <style>
   :root{--bg:#f7f3ec;--card:#fffdf9;--ink:#2b2b2b;--sub:#6b6b6b;--line:#e4ddcf;--akane:#c0414a}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -33,83 +33,83 @@
 <nav>
   <div class="wrap">
     <div class="logo">MyCIRQL</div>
-    <a href="privacy.html">日本語</a>
+    <span><a href="privacy.html">日本語</a> · <a href="privacy-en.html">English</a></span>
   </div>
 </nav>
 
 <header class="t">
   <div class="wrap">
     <h1>Kebijakan Privasi</h1>
-    <div class="date">Terakhir diperbarui: 14 Agustus 2026</div>
+    <div class="date">Terakhir diperbarui: 20 November 2026</div>
   </div>
 </header>
 
 <main class="wrap">
-  <p class="intro" style="margin-top:8px">MyCIRQL ("Aplikasi") dirancang dengan privasi Anda sebagai prioritas tertinggi. Aplikasi tidak mengirim informasi yang Anda daftarkan ke server eksternal mana pun, dan pengembang tidak dapat mengaksesnya. Kebijakan ini menjelaskan bagaimana Aplikasi menangani informasi.</p>
-
+  <p class="intro" style="margin-top:8px">MyCIRQL (“Aplikasi”) dirancang dengan privasi Anda sebagai prioritas tertinggi. Aplikasi tidak memiliki server yang dijalankan pengembang: Aplikasi tidak mengirim informasi yang Anda daftarkan ke server pengembang, dan pengembang tidak dapat memperolehnya. Kebijakan ini menjelaskan bagaimana Aplikasi menangani informasi, termasuk keadaan ketika informasi keluar dari perangkat Anda.</p>
   <section>
     <h2>1. Informasi yang Kami Tangani</h2>
     <p>Aplikasi menangani informasi berikut yang Anda masukkan dan daftarkan sendiri:</p>
     <ul>
-      <li>Nama orang, toko, dan tempat; cara baca; serta hubungan</li>
+      <li>Nama orang, toko, dan tempat; cara baca; serta hubungan (termasuk garis pada pohon keluarga dan diagram hubungan)</li>
       <li>Detail kontak seperti nomor telepon, alamat email, alamat pos, kode pos, dan tempat kerja</li>
       <li>Tanggal seperti hari ulang tahun, hari peringatan, dan tanggal wafat</li>
-      <li>Foto, catatan, dan kategori</li>
+      <li>Foto (termasuk gambar kartu nama), teks yang dibaca dari kartu nama, catatan, dan kategori</li>
     </ul>
-    <p>Semua ini adalah informasi yang Anda daftarkan di dalam Aplikasi. Aplikasi tidak pernah mengumpulkan informasi tanpa sepengetahuan Anda.</p>
+    <p>Semua ini adalah informasi yang Anda daftarkan di dalam Aplikasi. Aplikasi tidak pernah mengumpulkan informasi tanpa sepengetahuan Anda. Pengaturan Aplikasi seperti tampilan, kunci, dan waktu notifikasi juga disimpan di perangkat Anda.</p>
   </section>
-
   <section>
     <h2>2. Di Mana Informasi Disimpan</h2>
-    <p>Informasi yang Anda daftarkan hanya disimpan di perangkat Anda dan di area pribadi cloud Anda sendiri. Di iPhone, iPad, atau Mac, ini adalah iCloud Anda sendiri (area pribadi Anda); di Android, ini adalah cadangan akun Google Anda sendiri, tergantung pengaturan perangkat Anda. Tidak ada pihak ketiga, termasuk pengembang, yang dapat melihat atau memperoleh informasi ini.</p>
+    <p>Informasi yang Anda daftarkan disimpan di perangkat Anda. Selain itu, di iPhone, iPad, dan Mac, jika Anda masuk ke iCloud dengan akun Apple Anda, informasi yang Anda daftarkan (termasuk foto dan gambar kartu nama) disinkronkan secara otomatis ke area pribadi Anda sendiri di iCloud Apple (CloudKit). Di dalam Aplikasi tidak ada pengaturan untuk mengaktifkan atau menonaktifkan sinkronisasi ini. Ketika iCloud tidak tersedia, informasi hanya disimpan di perangkat Anda. Di Android, tergantung pengaturan perangkat Anda, informasi disimpan di cadangan akun Google Anda sendiri (foto tidak termasuk dalam cadangan ini dan hanya dipindahkan saat transfer langsung antarperangkat). Pengembang tidak dapat melihat atau memperoleh informasi ini. Penanganan konten yang tersimpan di iCloud atau akun Google Anda mengikuti pengaturan Anda sendiri dan ketentuan Anda dengan Apple dan Google.</p>
   </section>
-
   <section>
     <h2>3. Pengiriman Informasi ke Luar</h2>
-    <p>Sebagai aturan, Aplikasi tidak mengirim informasi ke luar. Hanya ada satu pengecualian:</p>
+    <p>Aplikasi tidak mengirim informasi yang Anda daftarkan ke server pengembang, dan tidak melakukan koneksi untuk iklan atau analitik. Aplikasi berkomunikasi ke luar perangkat Anda hanya dalam kasus berikut:</p>
     <ul>
-      <li><strong>Mengisi alamat otomatis dari kode pos</strong>: Hanya ketika Anda memilih untuk mencari alamat dengan memasukkan kode pos, Aplikasi mengirim kode pos tersebut ke layanan pencarian alamat eksternal. Hanya kode pos yang dikirim; nama dan informasi pribadi lainnya tidak dikirim.</li>
+      <li><strong>Sinkronisasi iCloud (iPhone, iPad, Mac)</strong>: Seperti dijelaskan di Bagian 2, Aplikasi berkomunikasi dengan iCloud Apple (area pribadi Anda sendiri).</li>
+      <li><strong>Mengisi alamat otomatis dari kode pos (hanya jika bahasa tampilan adalah bahasa Jepang)</strong>: Setelah Anda memasukkan 7 digit kode pos, Aplikasi secara otomatis mengirim kode pos tersebut ke layanan pencarian alamat eksternal (zipcloud) setelah jeda singkat; tidak perlu menekan tombol apa pun. Hanya kode pos yang dikirim; nama dan informasi pribadi lainnya tidak dikirim. Layanan tersebut menerima informasi yang lazim menyertai koneksi internet (seperti alamat IP Anda). Jika bahasa tampilan bukan bahasa Jepang, komunikasi ini tidak terjadi.</li>
+      <li><strong>Pengecekan pembelian dalam aplikasi</strong>: Aplikasi berkomunikasi dengan Apple App Store atau Google Play untuk membeli, memulihkan, dan memastikan status pembelian Anda (Bagian 8).</li>
+      <li><strong>Meneruskan informasi ke aplikasi dan layanan lain saat Anda mengetuk</strong>: Lihat Bagian 5.</li>
     </ul>
   </section>
-
   <section>
     <h2>4. Penggunaan Fitur Perangkat (Izin)</h2>
-    <p>Dengan izin Anda, Aplikasi dapat menggunakan fitur perangkat berikut. Fitur-fitur ini hanya digunakan untuk tujuan di dalam Aplikasi, dan tidak ada yang diperoleh dikirim ke luar.</p>
+    <p>Dengan izin Anda, Aplikasi dapat menggunakan fitur perangkat berikut. Fitur-fitur ini hanya digunakan untuk tujuan di dalam Aplikasi, dan tidak ada yang diperoleh dikirim ke pengembang.</p>
     <ul>
-      <li><strong>Kamera</strong>: Untuk mengambil foto di tempat dan menambahkannya ke orang atau tempat, serta memindai kartu nama dan sejenisnya.</li>
-      <li><strong>Foto</strong>: Untuk menambahkan foto dari perangkat Anda ke album.</li>
-      <li><strong>Kontak</strong>: Untuk mengimpor kontak dari perangkat Anda untuk didaftarkan.</li>
+      <li><strong>Kamera</strong>: Untuk mengambil foto di tempat dan menambahkannya ke orang atau tempat, serta memindai kartu nama dan sejenisnya (pemindaian dokumen).</li>
+      <li><strong>Foto</strong>: Untuk memilih foto dari perangkat Anda dan menambahkannya ke album atau kartu nama (Aplikasi hanya menerima foto yang Anda pilih di pemilih foto), dan, hanya saat Anda memintanya, untuk menyimpan gambar seperti diagram hubungan ke aplikasi Foto. Anda juga dapat menambahkan gambar yang Anda pilih di aplikasi File dan tempat serupa.</li>
+      <li><strong>Kontak</strong>: Untuk mengimpor kontak dari perangkat Anda untuk didaftarkan. Ini hanya membaca; Aplikasi tidak pernah mengubah kontak di perangkat Anda. Item yang dibaca adalah nama, nomor telepon, alamat email, ID aplikasi pesan dan media sosial, serta nama perusahaan.</li>
       <li><strong>Face ID / Touch ID / Kode Sandi (di Android: autentikasi biometrik / PIN atau pola perangkat)</strong>: Untuk membuka aplikasi saat Anda mengaktifkan kunci peluncuran (verifikasi identitas).</li>
-      <li><strong>Notifikasi</strong>: Untuk menampilkan pengingat seperti hari ulang tahun, hari peringatan, dan tanggal wafat.</li>
+      <li><strong>Notifikasi</strong>: Untuk menampilkan pengingat seperti hari ulang tahun, hari peringatan, dan tanggal wafat. Notifikasi ini dijadwalkan dan ditampilkan di perangkat Anda; Aplikasi tidak menggunakan notifikasi yang dikirim dari server (notifikasi push).</li>
     </ul>
     <p>Pengenalan teks (OCR) untuk kartu nama dan sejenisnya dilakukan sepenuhnya di perangkat Anda; gambar dan teks yang dikenali tidak pernah dikirim ke luar.</p>
   </section>
-
   <section>
-    <h2>5. Integrasi dengan Aplikasi Bawaan</h2>
-    <p>Aplikasi tidak memiliki fitur bawaan untuk mengirim email atau melakukan panggilan sendiri. Hanya ketika Anda mengetuk "Telepon", "Email", "Buka di Peta", dan sebagainya, aplikasi Telepon, Mail, Pesan, atau Peta bawaan perangkat Anda yang terbuka. Saat Anda memilih “Buka di Peta”, alamat tersebut diteruskan ke layanan peta yang Anda gunakan (Apple Maps atau Google Maps). Tindakan setelah itu ditangani oleh aplikasi bawaan tersebut dan oleh Anda.</p>
+    <h2>5. Integrasi dengan Aplikasi Bawaan, Berbagi, dan Ekspor</h2>
+    <p>Aplikasi tidak memiliki fitur bawaan untuk mengirim email atau melakukan panggilan sendiri. Hanya ketika Anda mengetuk “Telepon”, “Email”, “Buka di Peta”, dan sebagainya, aplikasi Telepon, Mail, Pesan, atau Peta bawaan perangkat Anda terbuka, dan nomor telepon, alamat email, atau alamat kontak tersebut diteruskan ke aplikasi itu. Saat Anda memilih “Buka di Peta”, alamat tersebut diteruskan ke layanan peta yang Anda pilih (Apple Maps atau Google Maps). Saat Anda memilih “WhatsApp”, tautan WhatsApp (wa.me) yang berisi nomor telepon dibuka, di aplikasi WhatsApp atau, pada perangkat tanpa aplikasi tersebut, di browser web. Saat Anda memilih aplikasi Gmail atau Outlook, alamat penerima diteruskan ke aplikasi itu. Tindakan setelah itu ditangani oleh aplikasi dan layanan tersebut serta oleh Anda.</p>
+    <p><strong>Berbagi dan ekspor</strong>: Berbagi kontak (misalnya lewat AirDrop), ekspor file CSV atau PDF atau gambar diagram hubungan dan pohon keluarga, serta pencadangan penuh hanya berjalan saat Anda memintanya. Aplikasi membuat file di perangkat Anda dan membuka layar berbagi standar perangkat (atau layar untuk memilih tempat menyimpan file). Anda sendiri yang memilih tujuannya. Aplikasi tidak mengirim file ini ke server pengembang atau ke tempat lain atas kemauannya sendiri. File yang dibagikan berisi informasi kontak yang Anda pilih (tergantung pilihan Anda, dapat mencakup foto, gambar kartu nama, hubungan, dan catatan), dan pencadangan penuh berisi semua yang telah Anda daftarkan. File-file ini tidak dienkripsi, sehingga Aplikasi tidak dapat mengendalikan penanganannya setelah Anda mengirim atau menyimpannya. File bagikan yang Anda terima hanya didaftarkan di Aplikasi jika Anda memilih item yang akan diimpor dan menyimpannya.</p>
   </section>
-
   <section>
     <h2>6. Pemberian kepada Pihak Ketiga</h2>
-    <p>Aplikasi tidak pernah memberikan atau menjual informasi Anda kepada pihak ketiga mana pun. Aplikasi tidak menayangkan iklan atau melacak penggunaan Anda.</p>
+    <p>Aplikasi tidak pernah memberikan atau menjual informasi Anda kepada pihak ketiga mana pun, kecuali yang dijelaskan di Bagian 2, 3, 5, dan 8 (sinkronisasi iCloud, pencarian kode pos, berbagi dan meneruskan informasi ke aplikasi lain yang Anda mulai sendiri, serta pembelian dalam aplikasi). Aplikasi tidak menayangkan iklan atau melacak penggunaan Anda, dan tidak memuat perangkat lunak pihak ketiga (SDK) untuk analitik, iklan, atau pengumpulan laporan kerusakan.</p>
   </section>
-
   <section>
-    <h2>7. Mengelola dan Menghapus Data</h2>
-    <p>Anda dapat mengedit atau menghapus informasi yang Anda daftarkan kapan saja di dalam Aplikasi. Jika Anda menghapus (mencopot) Aplikasi, data di perangkat Anda akan dihapus. Data yang disinkronkan ke iCloud ditangani sesuai pengaturan perangkat Apple dan pengaturan iCloud Anda; data yang disimpan di cadangan akun Google ditangani sesuai pengaturan akun Google dan cadangan Anda.</p>
+    <h2>7. Penghapusan Data: Jenis Data yang Dihapus dan Masa Penyimpanan</h2>
+    <p>Anda dapat menghapus sendiri informasi yang Anda daftarkan di MyCIRQL kapan saja, dengan cara berikut.</p>
+    <ul>
+      <li><strong>Hapus satu per satu</strong>: Pilih “Hapus” di layar detail kontak atau album di dalam Aplikasi, dan data langsung dihapus. Jika Anda menyinkronkan dengan iCloud, penghapusan juga tercermin di perangkat Anda yang lain yang memakai akun Apple yang sama.</li>
+      <li><strong>Hapus semuanya</strong>: Jika Anda menghapus (mencopot) Aplikasi, semua data Aplikasi yang tersimpan di perangkat Anda akan dihapus.</li>
+    </ul>
+    <p>Data yang dapat dihapus mencakup semua informasi yang tercantum di Bagian 1 kebijakan ini, “Informasi yang Kami Tangani” (nama, nomor telepon, alamat email, alamat, kode pos, tanggal, foto, gambar kartu nama, catatan, kategori, dan sebagainya). Karena informasi ini tidak pernah disimpan di server pengembang, pengembang tidak perlu melakukan penghapusan; penghapusan selesai saat Anda melakukan langkah di atas. Tidak ada data yang tersisa pada pengembang. File yang Anda buat melalui berbagi atau ekspor, dan data yang dimiliki orang yang Anda beri, tidak dapat dihapus dari dalam Aplikasi.</p>
+    <p>Untuk menghapus salinan yang disinkronkan ke iCloud (iPhone, iPad, Mac) atau yang tersimpan di cadangan akun Google (Android), gunakan pengaturan iCloud Apple atau pengaturan Google One pada akun Google Anda. Mencopot Aplikasi saja tidak menghapus salinan di sisi iCloud atau Google. Ini adalah area pribadi Anda sendiri yang dikelola Apple atau Google, yang tidak dapat diakses pengembang.</p>
   </section>
-
   <section>
     <h2>8. Pembelian Dalam Aplikasi</h2>
-    <p>Aplikasi menawarkan pembelian sekali bayar "Premium". Pembayaran diproses oleh Apple App Store atau Google Play, dan Aplikasi serta pengembangnya tidak pernah memperoleh atau menyimpan detail pembayaran seperti nomor kartu kredit. Satu-satunya hal yang disimpan Aplikasi adalah apakah Anda telah membeli Premium, yang disimpan di perangkat Anda (dan disertakan dalam cadangan iCloud/akun Google seperti dijelaskan di atas).</p>
+    <p>Aplikasi menawarkan pembelian sekali bayar “Premium”. Pembayaran diproses oleh Apple App Store atau Google Play, dan Aplikasi serta pengembangnya tidak pernah memperoleh atau menyimpan detail pembayaran seperti nomor kartu kredit. Satu-satunya hal yang disimpan Aplikasi adalah apakah Anda telah membeli Premium, yang disimpan di perangkat Anda. Di iPhone, iPad, dan Mac, status ini bukan bagian dari sinkronisasi iCloud, dan Aplikasi memastikannya dari catatan pembelian App Store Anda; di Android, tergantung pengaturan perangkat Anda, status ini juga termasuk dalam cadangan akun Google Anda.</p>
   </section>
-
   <section>
     <h2>9. Perubahan Kebijakan Ini</h2>
     <p>Kebijakan ini dapat diubah sesuai kebutuhan. Setiap perubahan berlaku saat diposting di halaman ini.</p>
   </section>
-
   <section>
     <h2>10. Kontak</h2>
     <p>Untuk pertanyaan tentang Aplikasi atau kebijakan ini, silakan hubungi kami di:</p>
@@ -119,7 +119,7 @@
 
 <footer>
   <div class="wrap">
-    <a href="privacy.html">日本語のプライバシーポリシー</a>
+    <a href="privacy.html">日本語</a> · <a href="privacy-en.html">English</a> · <a href="privacy-ko.html">한국어</a> · <a href="privacy-zh-Hans.html">简体中文</a> · <a href="privacy-zh-Hant.html">繁體中文</a> · <a href="privacy-hi.html">हिन्दी</a> · <a href="privacy-de.html">Deutsch</a> · <a href="privacy-fr.html">Français</a> · <a href="privacy-es.html">Español</a> · <a href="privacy-it.html">Italiano</a> · <a href="privacy-pt-PT.html">Português (Portugal)</a> · <a href="privacy-pt-BR.html">Português (Brasil)</a>
     <p style="margin-top:12px">© 2026 MyCIRQL</p>
   </div>
 </footer>
